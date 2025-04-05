@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Paper, Divider } from '@mui/material';
+import { Typography, Box, Paper, Divider } from '@mui/material';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 function App() {
