@@ -1,46 +1,65 @@
 import React from 'react';
-import { Container, Typography, Box, Paper } from '@mui/material';
-import Pipeline from './Pipeline';
+import { Container, Typography, Box, Paper, Divider } from '@mui/material';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 function App() {
   return (
     <Box
       sx={{
         minHeight: '100vh',
-        background: 'linear-gradient(to right, #f0f4ff, #e0ecff)',
+        background: 'linear-gradient(135deg, #e0ecff, #f0f4ff)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 4,
+        p: { xs: 2, sm: 4 },
       }}
     >
       <Paper
-        elevation={6}
+        elevation={8}
         sx={{
-          padding: 4,
-          maxWidth: 900,
+          padding: { xs: 3, sm: 5 },
+          maxWidth: 700,
           width: '100%',
-          borderRadius: 4,
-          boxShadow: '0px 4px 20px rgba(0,0,0,0.1)',
-          backgroundColor: 'white',
+          borderRadius: '20px',
+          textAlign: 'center',
+          background: 'white',
+          boxShadow: '0 8px 30px rgba(0, 0, 0, 0.1)',
+          animation: 'fadeIn 1s ease-in-out',
         }}
       >
+        <RocketLaunchIcon sx={{ fontSize: 60, color: '#3f51b5', mb: 1 }} />
         <Typography
           variant="h4"
           component="h1"
           gutterBottom
           sx={{
             fontWeight: 'bold',
-            textAlign: 'center',
             color: '#3f51b5',
-            marginBottom: 3,
           }}
         >
-          🚀 Pipeline Dashboard
+          Pipeline Testing
         </Typography>
 
-        <Pipeline />
+        <Divider sx={{ my: 2 }} />
+
+        <Typography
+          variant="h6"
+          sx={{
+            color: '#555',
+            fontWeight: 400,
+          }}
+        >
+          Seamless connection with <strong>Git</strong>, <strong>Netlify</strong>, and <strong>Jenkins</strong> for a powerful CI/CD pipeline setup.
+        </Typography>
       </Paper>
+
+      {/* Fade-in animation */}
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </Box>
   );
 }
